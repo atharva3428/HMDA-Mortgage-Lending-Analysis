@@ -2,17 +2,16 @@
 
 Analyzes US mortgage lending data from the FFIEC HMDA Platform using DuckDB SQL, surfacing insights through an interactive Streamlit dashboard.
 
-## Quick Start
+## Live Dashboard
+
+**[https://hmda-mortgage-lending-analysis-8knsertce3jrbkwktiz5y7.streamlit.app/](https://hmda-mortgage-lending-analysis-8knsertce3jrbkwktiz5y7.streamlit.app/)**
+
+## Local Development
 
 ```bash
-# Install dependencies
 pip install -r requirements.txt
-
-# Launch the dashboard
-python -m streamlit run .claude/skills/hmda-dashboard/dashboard.py
+python -m streamlit run dashboard.py
 ```
-
-Dashboard opens at **http://localhost:8501**
 
 ## Project Structure
 
