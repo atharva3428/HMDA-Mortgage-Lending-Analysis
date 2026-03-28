@@ -92,15 +92,24 @@ def get_db_connection():
     except Exception as e:
         return None, f"Connection failed: {str(e)[:150]}"
 
+def get_sql_dir():
+    """Resolve SQL directory — works locally and on Streamlit Cloud."""
+    # Local dev: .claude/skills/hmda-data-setup/sql/
+    local = Path(__file__).resolve().parent.parent / "hmda-data-setup" / "sql"
+    if local.exists():
+        return local
+    # Streamlit Cloud: sql/ next to dashboard.py
+    cloud = Path(__file__).resolve().parent / "sql"
+    if cloud.exists():
+        return cloud
+    return None
+
+
 @st.cache_data
 def discover_sql_files():
     """Auto-discover and validate SQL files"""
-    # Local dev path
-    sql_dir = Path(__file__).resolve().parent.parent / "hmda-data-setup" / "sql"
-    # Streamlit Cloud path (sql/ folder alongside dashboard.py)
-    if not sql_dir.exists():
-        sql_dir = Path(__file__).resolve().parent / "sql"
-    if not sql_dir.exists():
+    sql_dir = get_sql_dir()
+    if sql_dir is None:
         return [], "SQL directory not found"
 
     sql_files = sorted(sql_dir.glob("*.sql"))
@@ -112,7 +121,9 @@ def discover_sql_files():
 def load_sql_file(filename):
     """Load SQL file with validation"""
     try:
-        sql_dir = Path(__file__).resolve().parent.parent / "hmda-data-setup" / "sql"
+        sql_dir = get_sql_dir()
+        if sql_dir is None:
+            return None, "SQL directory not found"
         with open(sql_dir / filename, 'r') as f:
             content = f.read()
         if not content.strip():
@@ -132,7 +143,9 @@ def execute_analysis(filename):
         if error:
             return None, error
 
-        sql_dir = Path(__file__).resolve().parent.parent / "hmda-data-setup" / "sql"
+        sql_dir = get_sql_dir()
+        if sql_dir is None:
+            return None, "SQL directory not found"
         sql_path = sql_dir / filename
         if not sql_path.exists():
             return None, f"File not found: {filename}"
