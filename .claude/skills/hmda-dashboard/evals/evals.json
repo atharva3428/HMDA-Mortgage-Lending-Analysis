@@ -1,0 +1,23 @@
+{
+  "skill_name": "hmda-dashboard",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a dashboard to visualize all the HMDA analyses stored in the sql/ folder. I want to be able to explore the data interactively with filters.",
+      "expected_output": "A Streamlit dashboard (dashboard.py) with multiple pages, one for each SQL analysis file. Each page should have interactive charts (Plotly), sidebar filters, and display results clearly. Should include run instructions.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need an interactive dashboard to explore HMDA lending patterns. Set it up to auto-discover the analysis queries in sql/ and build pages for each one. Use Streamlit and Plotly.",
+      "expected_output": "Generated dashboard.py that auto-discovers SQL files, creates multi-page layout with appropriate visualizations (bar charts for lender analysis, line charts for income trends, geographic scatter plots, etc.). Include a run script.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Build a visual dashboard from our HMDA SQL analyses. I want lenders, income patterns, geographic gaps, denial reasons, and year-over-year trends all displayed with charts and summary metrics. Make it shareable.",
+      "expected_output": "Complete Streamlit dashboard with 5 pages (one per SQL file), Plotly visualizations, sidebar filters, summary metrics, data tables, and a bash script to run it. Dashboard should be production-ready for sharing with stakeholders.",
+      "files": []
+    }
+  ]
+}

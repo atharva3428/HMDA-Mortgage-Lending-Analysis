@@ -1,0 +1,9 @@
+# Large data files (generated locally, not committed)
+*.csv
+*.duckdb
+*.pyc
+.claude/
+.python-version
+.venv/
+__pycache__/
+venv/

@@ -1,0 +1,39 @@
+{
+  "eval_id": 1,
+  "eval_name": "lender-approval-rates",
+  "prompt": "Analyze approval rates by lender. Show me the top 10 lenders by volume and their approval rates for 2024. Include the number of applications and approvals for each.",
+  "assertions": [
+    {
+      "name": "sql_file_created",
+      "description": "A query.sql file is created with valid SQL syntax"
+    },
+    {
+      "name": "sql_uses_ctes",
+      "description": "SQL uses Common Table Expressions (CTEs) for readability"
+    },
+    {
+      "name": "clear_column_aliases",
+      "description": "Query uses clear column aliases like num_approved, pct_approved (not generic COUNT(*) as count)"
+    },
+    {
+      "name": "results_have_approval_rate",
+      "description": "Results include approval rate percentage for each lender"
+    },
+    {
+      "name": "top_10_lenders",
+      "description": "Results show top 10 lenders by volume"
+    },
+    {
+      "name": "summary_report_exists",
+      "description": "A summary.txt report is generated with key findings"
+    },
+    {
+      "name": "report_includes_findings",
+      "description": "Report includes 3+ key findings (e.g., highest/lowest approval rate, median rate, insights)"
+    },
+    {
+      "name": "report_mentions_file_location",
+      "description": "Report specifies where the .sql file was saved"
+    }
+  ]
+}

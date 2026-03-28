@@ -1,0 +1,35 @@
+{
+  "eval_id": 4,
+  "eval_name": "denial-reasons-by-lender",
+  "prompt": "What are the most common reasons for loan denial in 2024? Break it down by the top 10 lenders to see if denial reasons differ across institutions.",
+  "assertions": [
+    {
+      "name": "sql_file_created",
+      "description": "A query.sql file is created with valid SQL syntax"
+    },
+    {
+      "name": "filters_denials_only",
+      "description": "Query filters for action_taken = 3 (denials) only"
+    },
+    {
+      "name": "denial_reason_aggregation",
+      "description": "SQL aggregates denial_reason_1, denial_reason_2, denial_reason_3 columns"
+    },
+    {
+      "name": "lender_breakdown",
+      "description": "Results break down denial reasons by top 10 lenders"
+    },
+    {
+      "name": "identifies_common_reasons",
+      "description": "Query identifies the most frequent denial reason codes"
+    },
+    {
+      "name": "summary_report_exists",
+      "description": "A summary.txt report is generated with key findings"
+    },
+    {
+      "name": "report_compares_lenders",
+      "description": "Report identifies whether denial reasons vary significantly across lenders"
+    }
+  ]
+}

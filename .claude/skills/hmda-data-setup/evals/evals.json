@@ -1,0 +1,17 @@
+{
+  "skill_name": "hmda-data-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to download the 2024 HMDA mortgage lending dataset from FFIEC and load it into DuckDB. How do I set this up?",
+      "expected_output": "The skill downloads the 2024 HMDA LAR CSV from ffiec.cfpb.gov, saves it to the data folder, loads it into DuckDB, validates the schema, and displays summary statistics with row and column counts.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Set up the HMDA data layer for my project. Download the 2024 mortgage lending data and get it into DuckDB so I can query it.",
+      "expected_output": "Downloads the 2024 HMDA dataset, stores as 2024_public_lar.csv, creates hmda.duckdb with 12M+ rows, updates .gitignore to exclude large files, and shows summary statistics.",
+      "files": []
+    }
+  ]
+}

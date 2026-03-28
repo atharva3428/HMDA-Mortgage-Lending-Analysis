@@ -1,0 +1,35 @@
+{
+  "eval_id": 3,
+  "eval_name": "geographic-approval-disparities",
+  "prompt": "Show me geographic lending gaps. Which states have the largest differences in approval rates between white and non-white applicants in 2024?",
+  "assertions": [
+    {
+      "name": "sql_file_created",
+      "description": "A query.sql file is created with valid SQL syntax"
+    },
+    {
+      "name": "race_segmentation",
+      "description": "SQL segments applicants by race (white vs non-white)"
+    },
+    {
+      "name": "state_level_analysis",
+      "description": "Query calculates metrics by state"
+    },
+    {
+      "name": "disparity_metric",
+      "description": "Results include approval rate difference between white and non-white applicants for each state"
+    },
+    {
+      "name": "identifies_largest_gaps",
+      "description": "Query identifies and ranks states with largest approval disparities"
+    },
+    {
+      "name": "summary_report_exists",
+      "description": "A summary.txt report is generated with key findings"
+    },
+    {
+      "name": "report_calls_out_top_disparities",
+      "description": "Report highlights top 3-5 states with largest gaps and provides context"
+    }
+  ]
+}

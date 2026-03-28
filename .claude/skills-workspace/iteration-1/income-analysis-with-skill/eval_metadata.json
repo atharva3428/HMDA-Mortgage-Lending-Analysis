@@ -1,0 +1,31 @@
+{
+  "eval_id": 2,
+  "eval_name": "income-level-approval-rates",
+  "prompt": "I want to understand the relationship between applicant income and loan approval. Show me approval rates broken down by income levels (buckets like <$50k, $50-100k, $100-200k, >$200k) for 2024.",
+  "assertions": [
+    {
+      "name": "sql_file_created",
+      "description": "A query.sql file is created with valid SQL syntax"
+    },
+    {
+      "name": "income_buckets_created",
+      "description": "SQL creates income buckets (<50k, 50-100k, 100-200k, >200k) using CASE statements"
+    },
+    {
+      "name": "approval_rate_calculated",
+      "description": "Query calculates approval rate for each income bucket"
+    },
+    {
+      "name": "results_show_trend",
+      "description": "Results clearly show whether higher income correlates with higher approval rates"
+    },
+    {
+      "name": "summary_report_exists",
+      "description": "A summary.txt report is generated with key findings"
+    },
+    {
+      "name": "report_highlights_correlation",
+      "description": "Report identifies whether income affects approval rates and includes supporting numbers"
+    }
+  ]
+}

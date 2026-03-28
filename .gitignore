@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv/
+venv/
+
+# Large data files (regenerate locally)
+*.csv
+*.duckdb
+
+# Python version file
+.python-version
+
+# uv lock (optional, can be committed if desired)
+uv.lock
+
+# Claude internal files (sessions, transcripts, etc.)
+.claude/projects/
+.claude/todos/
+.claude/settings.local.json
+
+# Skills workspace (eval artifacts, not source)
+.claude/skills/hmda-dashboard-workspace/
+.claude/skills/hmda-analysis/evals/
+.claude/skills/hmda-data-setup/data/
